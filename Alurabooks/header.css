@@ -1,0 +1,116 @@
+.cabecalho__menu-hamburguer{
+    width: 24px;
+    height: 24px;
+    background-image: url(../src/Menu.svg);
+    display: inline-block;
+}
+
+.cabecalho{
+    background-color: var(--branco-fundo);
+}
+
+.container__titulo{
+    display: none;
+}
+
+.opcoes{
+    display: none;
+}
+
+.container__texto{
+    display: none;
+}
+
+.container__botao:checked~.container__rotulo > .cabecalho__menu-hamburguer{
+
+    background-image: url(../src/Menu\ Aberto.svg);
+
+}
+
+.container__botao:checked~.container__rotulo{
+    background: var(--azul-fonte);
+}
+
+
+@media screen and (min-width: 1024px){
+    
+    .container__titulo{
+        font-family: var(--fonte-titulo);
+        font-weight: 400;
+        display: block;
+
+    }
+
+    .container__titulo-negrito{
+        font-family: var(--fonte-titulo);
+        font-weight: 700;
+    }
+
+    .opcoes{
+        display: block;
+        display: flex;
+        gap: 40px;
+    }
+
+    .opcoes__item{
+        text-transform: uppercase;
+    }
+
+    .opcoes__link{
+        text-decoration: none;
+        color: var(--azul-fonte);
+        font-weight: 400;
+    }
+
+    .opcoes__botao:checked~.lista-menu{
+        display: block;
+        width: auto;
+    }
+
+    .opcoes__botao{
+        display: none;
+    }
+
+    .opcoes__botao:checked ~ .opcoes__rotulo > .opcoes__item{
+        background: var(--azul-fonte);
+        color: var(--branco-fundo);
+    }
+
+    .opcoes__item{
+        padding: 2em 1rem;
+    }
+
+    .lista-menu__item:hover{
+
+        background-color: var(--azul-fonte);
+        color: var(--branco-fundo);
+    }
+
+    .lista-menu__item:hover > .lista-menu__link {
+        -webkit-text-fill-color: var(--branco-fundo);
+        text-decoration: none;
+    }
+}
+
+@media screen and (min-width:1728px) {
+    .container__link{
+        display: flex;
+        align-items: center;
+        margin: 0 10px;
+        gap: 10px;
+        text-decoration: none;
+    }
+
+    .cabecalho{
+        padding: 0.2em;
+    }
+
+    .opcoes{
+        margin-right: auto;
+        margin-left: 2em;
+    }
+    
+    .container__texto{
+        display: block;
+    }
+}
